@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>2021-SPA | Classic Databinding Example</title>
+		<script type="text/javascript" src="https://unpkg.com/mithril/mithril.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			m.mount(document.body, {
+				oninit: (vnode) => {
+					vnode.state.count = 0;
+				},
+
+				view: (vnode) => {
+					return [
+						m('div', vnode.state.count),
+						m('button', { onclick: () => { vnode.state.count--; }}, '-'),
+						m('button', { onclick: () => { vnode.state.count = 0; }}, 'Reset'),
+						m('button', { onclick: () => { vnode.state.count++; }}, '+'),
+					];
+				},
+			})
+		</script>
+	</body>
+</html>

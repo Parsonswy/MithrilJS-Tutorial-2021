@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>2021-SPA | Introduction to Webpages</title>
+		<style type="text/css">
+			.page-title {
+				font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+			}
+			
+			.checklist-module {}
+			
+			.checklist-module .checklist-form-textfield {
+				width: 320px;
+				height: 20px;
+			}
+
+			.checklist-module .checklist-form-submit {
+				height: 24px;
+			}
+			
+			.checklist-module .checklist-list {
+			
+			}
+			
+			.checklist-module .checklist-item {
+				margin: 6px 0;
+				cursor: pointer;
+			}
+
+			.checklist-module .checklist-item:hover,
+			.checklist-module .checklist-item--complete {
+				color: green;
+				text-decoration: line-through;
+			}
+		</style>
+		<script type="text/javascript" src="https://unpkg.com/mithril/mithril.js"></script>
+	</head>
+	<body>
+		<script type='text/javascript'>
+			const checklistComponent = {
+				oninit: (vnode) => {
+					vnode.state.checklist = [
+						{
+							text: 'Learn about HTML.',
+							complete: false,
+						},
+						{
+							text: 'Learn about CSS.',
+							complete: false,
+						},
+						{
+							text: 'Learn about Javascript.',
+							complete: false,
+						},
+					];
+				},
+
+				view: (vnode) => {
+					/*
+					let liVnodes = [];
+					for(let i=0; i < vnode.state.checklist.length; i++) {
+						liVnodes.push(
+							m('li.checklist-item', {}, vnode.state.checklist[i].text)
+						);
+					}*/
+
+					return [
+						m('h3.page-title', 'Introduction to Mithril Checklist'),
+
+						m('.checklist-module', [
+							m('form', [
+								m('input[type=text].checklist-form-textfield', {
+									placeholder: 'New todo item...'
+								}),
+								m('input[type=submit].checklist-form-submit', {
+									value: 'Add Todo Item'	
+								}),
+							]),
+
+							// m('ul.checklist-list', {}, liVnodes)
+							m('ul.checklist-list', vnode.state.checklist.map((listItem) => m('li.checklist-item', listItem.text)))
+						])
+					];
+				},
+			};
+
+			/*
+				I forogt to mention this line in the video. Add it as it apears here.
+				I explain what it does in part 2 in depth, but if you don't have it nothing will appear on the page.
+			*/
+			m.mount(document.body, checklistComponent);
+		</script>
+	</body>
+</html>
