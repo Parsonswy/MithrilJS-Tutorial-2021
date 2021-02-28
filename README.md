@@ -1,3 +1,7 @@
+# Video Index
+1. [Mithril Component and Templating Syntax](https://youtu.be/PosZXyainoA)
+2. [Autoredraw and Data Binding](https://youtu.be/ciEA61XCOjw)
+
 # Prereiquites Knowledge Resources
 If some of the HTML, CSS, or JS concepts in the videos were new to you, I encourge reviewing the linked content. It is a bit lengthy, but this knowledge is generally necessary in later segments and extends beyond just making SPAs. Resources are available in text & video format. Choose whichever you prefer.
 
@@ -30,11 +34,11 @@ A single page application is a webpage who's entire content is created by code w
 ```
 
 # Preformatted code block in markdown
+```
 ```javascript
 console.log("hello world");
 if (test) {
 	// stuff
 }
+\``` # without the '\'.
 ```
-# Video Index
-1. [Mithril Component and Templating Syntax](https://youtu.be/Ncc19AlgiSQ)
