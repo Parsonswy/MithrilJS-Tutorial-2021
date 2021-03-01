@@ -86,7 +86,12 @@
 						m('h3.page-title', 'Introduction to Mithril Checklist'),
 
 						m('.checklist-module', [
-							m('form', { action: '#' }, [
+							/*
+								Correction: 'action': is better set to an empty string.
+								Setting it to a '#' causes issues with the default Mithril router.
+								I explain why this is an issue in segment 3.
+							*/
+							m('form', { action: '' }, [
 								m('input[type=text].checklist-form-textfield', {
 									placeholder: 'New todo item...',
 									oninput: (e) => { vnode.state.textfieldValue = e.target.value; },
