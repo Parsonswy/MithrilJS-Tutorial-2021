@@ -1,6 +1,7 @@
 # Video Index
 1. [Mithril Component and Templating Syntax](https://youtu.be/PosZXyainoA)
 2. [Autoredraw and Data Binding](https://youtu.be/ciEA61XCOjw)
+3. [Routing and Layouts](https://youtu.be/0h1h38g3-IU)
 
 # Prereiquites Knowledge Resources
 If some of the HTML, CSS, or JS concepts in the videos were new to you, I encourge reviewing the linked content. It is a bit lengthy, but this knowledge is generally necessary in later segments and extends beyond just making SPAs. Resources are available in text & video format. Choose whichever you prefer.

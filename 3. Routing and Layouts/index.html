@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>2021-SPA | Introduction to Webpages</title>
+		<style type="text/css">
+			body {
+				font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+			}
+			
+			.checklist-module {}
+			
+			.checklist-module .checklist-form-textfield {
+				width: 320px;
+				height: 20px;
+			}
+
+			.checklist-module .checklist-form-submit {
+				height: 24px;
+			}
+			
+			.checklist-module .checklist-list {
+			
+			}
+			
+			.checklist-module .checklist-item {
+				margin: 6px 0;
+				cursor: pointer;
+			}
+
+			.checklist-module .checklist-item:hover,
+			.checklist-module .checklist-item.complete {
+				color: green;
+				text-decoration: line-through;
+			}
+		</style>
+		<script type="text/javascript" src="https://unpkg.com/mithril/mithril.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript" src="default-layout.js"></script>
+		<script type="text/javascript" src="homepage.js"></script>
+		<script type="text/javascript" src="dynamic-checklist.js"></script>
+		<script type='text/javascript'>
+			m.route(document.body, '/', {
+				'/': {
+					render: () => m(DefaultLayout, {}, m(HomePage))
+				},
+
+				'/checklist': {
+					render: () => m(DefaultLayout, {}, m(DynamicChecklist))
+				},
+				'/checklist/:items': {
+					render: (vnode) => m(DefaultLayout, {}, m(DynamicChecklist, { items: vnode.attrs.items }))
+				}
+			})
+		</script>
+	</body>
+</html>

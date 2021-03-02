@@ -68,7 +68,7 @@
 						m('h3.page-title', 'Introduction to Mithril Checklist'),
 
 						m('.checklist-module', [
-							m('form', [
+							m('form', { onsubmit: (e) => { e.preventDefault(true); } }, [
 								m('input[type=text].checklist-form-textfield', {
 									placeholder: 'New todo item...'
 								}),
